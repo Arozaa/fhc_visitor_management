@@ -1,0 +1,1 @@
+# Visitor Badge DocType

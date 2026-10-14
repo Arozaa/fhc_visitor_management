@@ -1,0 +1,105 @@
+{
+ "charts": [
+  {
+   "chart_name": "Visit Status Breakdown",
+   "label": "Visit Status Breakdown"
+  }
+ ],
+ "content": "[{\"id\":\"oEpZP3BGKF\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Visitor Management</b></span>\",\"col\":12}},{\"id\":\"1JMgCYBpgv\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"CbVHFPGgFH\",\"type\":\"card\",\"data\":{\"card_name\":\"Visitor Management\",\"col\":4}},{\"id\":\"dKUmBp4Xbv\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}}]",
+ "creation": "2026-10-13 00:00:00.000000",
+ "doctype": "Workspace",
+ "hide_custom": 0,
+ "icon": "users",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "Visitor Management",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Visitor Management",
+   "link_count": 0,
+   "onboard": 1,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Visit",
+   "link_to": "Visit",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Visitor",
+   "link_to": "Visitor",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Visitor Badge",
+   "link_to": "Visitor Badge",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Host Department",
+   "link_to": "Host Department",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Reports",
+   "link_count": 0,
+   "onboard": 1,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Daily Visit Summary",
+   "link_to": "Daily Visit Summary",
+   "link_type": "Report",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Visitor Frequency",
+   "link_to": "Visitor Frequency",
+   "link_type": "Report",
+   "onboard": 1,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-10-13 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Visitor Management",
+ "name": "Visitor Management",
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "restrict_to_domain": "",
+ "roles": [],
+ "sequence_id": 1.0,
+ "title": "Visitor Management"
+}

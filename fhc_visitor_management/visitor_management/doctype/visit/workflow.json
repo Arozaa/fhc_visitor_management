@@ -1,0 +1,85 @@
+{
+ "doctype": "Workflow",
+ "name": "Visit Approval Workflow",
+ "document_type": "Visit",
+ "workflow_name": "Visit Approval Workflow",
+ "is_active": 1,
+ "override_status": 1,
+ "send_email_alert": 0,
+ "states": [
+  {
+   "state": "Draft",
+   "doc_status": "0",
+   "allow_edit": "Receptionist"
+  },
+  {
+   "state": "Pending Approval",
+   "doc_status": "0",
+   "allow_edit": "VM Admin Manager"
+  },
+  {
+   "state": "Approved",
+   "doc_status": "0",
+   "allow_edit": "Security Officer"
+  },
+  {
+   "state": "Checked In",
+   "doc_status": "1",
+   "allow_edit": "Security Officer"
+  },
+  {
+   "state": "Checked Out",
+   "doc_status": "1",
+   "allow_edit": "VM Admin Manager"
+  },
+  {
+   "state": "Cancelled",
+   "doc_status": "2",
+   "allow_edit": "VM Admin Manager"
+  }
+ ],
+ "transitions": [
+  {
+   "state": "Draft",
+   "action": "Submit for Approval",
+   "next_state": "Pending Approval",
+   "allowed": "Receptionist",
+   "allow_self_approval": 1
+  },
+  {
+   "state": "Pending Approval",
+   "action": "Approve",
+   "next_state": "Approved",
+   "allowed": "VM Admin Manager",
+   "allow_self_approval": 1
+  },
+  {
+   "state": "Pending Approval",
+   "action": "Reject",
+   "next_state": "Cancelled",
+   "allowed": "VM Admin Manager",
+   "allow_self_approval": 1
+  },
+  {
+   "state": "Approved",
+   "action": "Check In",
+   "next_state": "Checked In",
+   "allowed": "Security Officer",
+   "allow_self_approval": 1
+  },
+  {
+   "state": "Approved",
+   "action": "Cancel",
+   "next_state": "Cancelled",
+   "allowed": "VM Admin Manager",
+   "allow_self_approval": 1
+  },
+  {
+   "state": "Checked In",
+   "action": "Check Out",
+   "next_state": "Checked Out",
+   "allowed": "Security Officer",
+   "allow_self_approval": 1
+  }
+ ]
+}

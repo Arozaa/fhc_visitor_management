@@ -1,0 +1,155 @@
+{% set primary = "#1B4F72" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, Helvetica, sans-serif; color: #1a1a1a; }
+
+    .pass-wrapper {
+      width: 85mm;
+      min-height: 54mm;
+      border: 2.5px solid {{ primary }};
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .pass-header {
+      background: {{ primary }};
+      color: #fff;
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .pass-header .org-name {
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+
+    .pass-header .pass-label {
+      font-size: 9px;
+      opacity: 0.85;
+    }
+
+    .pass-body {
+      padding: 10px 14px;
+    }
+
+    .pass-field {
+      margin-bottom: 5px;
+    }
+
+    .pass-field .label {
+      font-size: 7px;
+      text-transform: uppercase;
+      color: #777;
+      letter-spacing: 0.4px;
+    }
+
+    .pass-field .value {
+      font-size: 11px;
+      font-weight: bold;
+      color: #1a1a1a;
+    }
+
+    .pass-row {
+      display: flex;
+      gap: 16px;
+    }
+
+    .pass-row .pass-field {
+      flex: 1;
+    }
+
+    .badge-box {
+      display: inline-block;
+      background: {{ primary }};
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 4px 10px;
+      border-radius: 4px;
+      letter-spacing: 1px;
+    }
+
+    .pass-footer {
+      background: #f5f5f5;
+      border-top: 1px solid #e0e0e0;
+      padding: 6px 14px;
+      font-size: 7.5px;
+      color: #777;
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+  <div class="pass-wrapper">
+    <div class="pass-header">
+      <div>
+        <div class="org-name">FEDERAL HOUSING CORPORATION</div>
+        <div class="pass-label">Visitor Access Pass</div>
+      </div>
+      <div style="text-align:right;">
+        <div style="font-size:9px; opacity:0.85;">{{ doc.name }}</div>
+        <div style="font-size:9px; opacity:0.85;">{{ frappe.format(doc.visit_date, {'fieldtype':'Date'}) }}</div>
+      </div>
+    </div>
+
+    <div class="pass-body">
+      <div class="pass-field" style="margin-bottom:8px;">
+        <div class="label">Visitor Name</div>
+        <div class="value" style="font-size:14px;">{{ doc.visitor_name }}</div>
+      </div>
+
+      <div class="pass-row">
+        <div class="pass-field">
+          <div class="label">Visiting</div>
+          <div class="value">{{ doc.host_name }}</div>
+        </div>
+        <div class="pass-field">
+          <div class="label">Department</div>
+          <div class="value">{{ doc.host_department }}</div>
+        </div>
+      </div>
+
+      <div class="pass-row" style="margin-top:6px;">
+        <div class="pass-field">
+          <div class="label">Purpose</div>
+          <div class="value">{{ doc.visit_purpose }}</div>
+        </div>
+        {% if doc.badge_number %}
+        <div class="pass-field">
+          <div class="label">Badge</div>
+          <div class="value"><span class="badge-box">{{ doc.badge_number }}</span></div>
+        </div>
+        {% endif %}
+      </div>
+
+      {% if doc.expected_arrival %}
+      <div class="pass-row" style="margin-top:6px;">
+        <div class="pass-field">
+          <div class="label">Expected Arrival</div>
+          <div class="value">{{ frappe.format(doc.expected_arrival, {'fieldtype':'Datetime'}) }}</div>
+        </div>
+        {% if doc.expected_departure %}
+        <div class="pass-field">
+          <div class="label">Expected Departure</div>
+          <div class="value">{{ frappe.format(doc.expected_departure, {'fieldtype':'Datetime'}) }}</div>
+        </div>
+        {% endif %}
+      </div>
+      {% endif %}
+    </div>
+
+    <div class="pass-footer">
+      <span>This pass is valid for one entry only on the date shown.</span>
+      <span>IT/ERP – FHC</span>
+    </div>
+  </div>
+</body>
+</html>
