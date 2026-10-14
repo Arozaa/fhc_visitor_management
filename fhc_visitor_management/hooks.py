@@ -16,32 +16,10 @@ app_logo_url = "/assets/fhc_visitor_management/images/fhc_logo.png"
 
 # Fixtures — export these records with the app so the app is self-contained
 fixtures = [
-    {"dt": "Role", "filters": [["name", "in", [
-        "Receptionist",
-        "Security Officer",
-        "VM Admin Manager",
-    ]]]},
-    {"dt": "Workflow", "filters": [["document_type", "=", "Visit"]]},
-    {"dt": "Workflow State", "filters": [["workflow_state_name", "in", [
-        "Draft",
-        "Pending Approval",
-        "Approved",
-        "Checked In",
-        "Checked Out",
-        "Cancelled",
-    ]]]},
-    {"dt": "Workflow Action Master", "filters": [["workflow_action_name", "in", [
-        "Submit for Approval",
-        "Approve",
-        "Reject",
-        "Check In",
-        "Check Out",
-        "Cancel",
-    ]]]},
-    "Custom Field",
-    "Property Setter",
-    "Print Format",
-    "Report",
+    {
+        "dt": "Role",
+        "filters": [["name", "in", ["Receptionist", "Security Officer", "VM Admin Manager"]]]
+    },
 ]
 
 # DocType-level event hooks

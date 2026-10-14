@@ -4,7 +4,8 @@ Utility functions and scheduled tasks for the Visitor Management module.
 
 import frappe
 from frappe import _
-from frappe.utils import now_datetime, add_hours, get_datetime
+from frappe.utils import now_datetime, get_datetime
+from datetime import timedelta
 
 
 def auto_checkout_overdue_visits():
@@ -13,7 +14,7 @@ def auto_checkout_overdue_visits():
     Automatically checks out visits that were checked in more than 12 hours ago
     and were never manually checked out.  Logs the action for audit.
     """
-    cutoff = add_hours(now_datetime(), -12)
+    cutoff = get_datetime(now_datetime()) - timedelta(hours=12)
 
     overdue_visits = frappe.get_all(
         "Visit",

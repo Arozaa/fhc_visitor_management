@@ -1,18 +1,21 @@
 [
   {
     "doctype": "Role",
+    "name": "Receptionist",
     "role_name": "Receptionist",
     "desk_access": 1,
     "is_custom": 1
   },
   {
     "doctype": "Role",
+    "name": "Security Officer",
     "role_name": "Security Officer",
     "desk_access": 1,
     "is_custom": 1
   },
   {
     "doctype": "Role",
+    "name": "VM Admin Manager",
     "role_name": "VM Admin Manager",
     "desk_access": 1,
     "is_custom": 1
