@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# Frappe / Bench
+*.pyc
+node_modules/
+.DS_Store
+Thumbs.db
+
+# Secrets — never commit these
+*.env
+.env.*
+site_config.json
+common_site_config.json
+private/
+backups/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
